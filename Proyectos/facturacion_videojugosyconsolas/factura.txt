@@ -1,0 +1,6 @@
+Factura de Videojuegos
+
+Título		Género		Fecha de Lanzamiento
+----------------------------------------------
+Minecraft		Sandbox		2011-11-18
+God of War II		Videojuego de acción		2007-03-13

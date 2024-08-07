@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/factura.css">
+    <title>Crear Factura</title>
+</head>
+<body>
+    <h1>Crear Factura</h1>
+    <form action="Salvar_Factura.php" method="post">
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" required><br><br>
+        <h2>Productos</h2>
+        <div id="productos">
+            <div class="linea-productos">
+                <input type="text" name="descripcion[]" placeholder="Descripcion del producto" required>
+                <input type="number" name="cantidad[]" placeholder="Cantidad" min="1" max="100" required>
+                <input type="number" name="precio[]" placeholder="Precio" step="0.01" required><br><br>
+            </div>
+        </div>
+        <button type="button" onclick="addProductos()">Agregar Productos</button><br><br>
+        <button type="submit" name="btn_Guardar">Guardar Factura</button>
+        <button type="button" onclick="location.href='Mostrar_factura.php'">Mostrar Facturas</button>
+        <button type="button" onclick="location.href='Mostrar_productos.php'">Mostrar Productos</button>
+    </form>
+    <script>
+        function addProductos(){
+            const ProductoLinea = document.createElement('div');
+            ProductoLinea.classList.add('linea-productos');
+            ProductoLinea.innerHTML = `
+                <input type="text" name="descripcion[]" placeholder="Descripcion del producto">
+                <input type="number" name="cantidad[]" placeholder="Cantidad" min="1" max="100" required>
+                <input type="number" name="precio[]" placeholder="Precio" step="0.01" required><br><br>
+            `;
+            document.getElementById('productos').appendChild(ProductoLinea);
+        }
+    </script>
+</body>
+</html>

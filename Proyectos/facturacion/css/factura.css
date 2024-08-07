@@ -1,0 +1,11 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+.linea-productos{
+    display: flex;
+    margin-bottom: 10px;
+}
+.linea-productos input{
+    margin-right: 10px;
+}

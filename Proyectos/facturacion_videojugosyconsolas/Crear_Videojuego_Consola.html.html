@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/factura.css">
+    <title>Crear Videojuego y Consola</title>
+</head>
+<body>
+    
+<!--Crear o ingresar nuevos videojuegos -->
+    <h1>Crear Videojuego</h1>
+    <form action="Salvar_Videojuego.php" method="post">
+        <div class="linea-videojuegos">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
+        <div class="linea-videojuegos">
+            <label for="genero">Género:</label>
+            <input type="text" id="genero" name="genero" required>
+        </div>
+        <div class="linea-videojuegos">
+            <label for="lanzamiento">Fecha de lanzamiento:</label>
+            <input type="date" id="lanzamiento" name="lanzamiento" required>
+        </div>
+        <div class="linea-videojuegos">
+            <!--Boton para guardar o ingresar nuevos videojuegos -->
+            <button type="submit" name="btn_Guardar">Guardar Videojuego</button>
+        </div>
+    </form>
+
+<!--Crear o ingresar nuevas consolas -->
+    <h1>Crear Consola</h1>
+    <form action="Salvar_Consola.php" method="post">
+        <div class="linea-consolas">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="linea-consolas">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+        </div>
+        <div class="linea-consolas">
+            <label for="lanzamiento">Fecha de lanzamiento:</label>
+            <input type="date" id="lanzamiento" name="lanzamiento" required>
+        </div>
+        <div class="linea-consolas">
+            <!--Boton para guardar o ingresar nuevas consolas -->
+            <button type="submit" name="btn_Guardar">Guardar Consola</button>
+        </div>
+    </form>
+
+<!--Boton que nos enviara a buscar videojuegos -->
+    <form action="Buscar_Videojuego.php" method="get">
+        <button type="submit">Buscar Videojuego</button>
+    </form>
+<!--Boton que nos enviara a buscar consolas-->
+    <form action="Buscar_Consola.php" method="get">
+        <button type="submit">Buscar Consola</button>
+    </form>
+<!--Boton que nos generara las factura con todos los juegos y consolas que tenemos registrados en la base de datos -->
+    <form action="Generar_Factura.php" method="post">
+        <button type="submit" name="btn_Factura">Generar Factura</button>
+    </form>
+</body>
+</html>

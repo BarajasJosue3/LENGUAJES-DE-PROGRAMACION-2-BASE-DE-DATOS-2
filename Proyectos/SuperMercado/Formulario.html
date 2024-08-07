@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperMercado</title>
+    <style>
+        .fields-gruop{ margin-bottom: 10px;}
+        .fields-gruop input{ margin-right: 10px;}
+    </style>
+    <script>
+        function addField(){
+            const fieldGroup = document.createElement('div');
+            fieldGroup.className = 'fields-gruop';
+
+            const productoField = document.createElement('input');
+            productoField.type = 'text';
+            productoField.name = 'productos[]';
+            productoField.placeholder = 'Id Producto';
+
+            const cantidadField = document.createElement('input');
+            productoField.type = 'text';
+            productoField.name = 'cantidades[]';
+            productoField.placeholder = 'Cantidad';
+
+            fieldGroup.appendChild(productoField);
+            fieldGroup.appendChild(cantidadField);
+            document.getElementById('fields').appendChild(fieldGroup);
+
+        }
+    </script>
+</head>
+
+
+<body>
+    <h1>Supermercado</h1>
+    <h2>Registrar Productos</h2>
+    <form action="add_productos.php" method="post">
+        <div>
+            <label for="nombre">Nombre del Producto</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto">
+        </div>
+        <div>
+            <label for="precio">Precio del Producto</label>
+            <input type="text" name="precio" id="precio" placeholder="Precio del producto">
+        </div>
+        <button type="submit">Agregar Producto</button>
+    </form>
+    <hr>
+    <h2>Crear Ticket</h2>
+    <form action="Crear_tiket.php" method="post">
+        <div id="fields">
+            <div class="fields-gruop">
+                <input type="text" name="productos[]" placeholder="Id_Producto">
+                <input type="text" name="cantidades[]" placeholder="Cantidad">
+            </div>
+        </div>
+        <button type="button" onclick="addField()"> Agregar Producto</button>
+        <button type="submit">Crear Tiket</button>
+    </form>
+</body>
+</html>

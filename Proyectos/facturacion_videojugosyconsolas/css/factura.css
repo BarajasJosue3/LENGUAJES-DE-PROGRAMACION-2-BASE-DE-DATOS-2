@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+.linea-productos, .linea-videojuegos {
+    display: flex;
+    margin-bottom: 10px;
+}
+.linea-productos input, .linea-videojuegos input, .linea-videojuegos select {
+    margin-right: 10px;
+}
+
